@@ -1,0 +1,150 @@
+mysql Code
+>create database FOSEE;
+>use FOSEE;
+
+> create table user(user_id varchar(80) primary key,Name varchar(80),Phone bigint,Address varchar(80));
+
+>insert into user(user_id,Name,Phone,Address)values("RA23","Rahul Sarkar",8133810323,"Guwahati");
+
+> insert into user(user_id,Name,Phone,Address)values("RAj13","Raj Dev",8153410923,"Gurgaon");
+
+>insert into user(user_id,Name,Phone,Address)values("AM23","Aman Alam",9153400980,"Rajasthan");
+
+>insert into user(user_id,Name,Phone,Address)values("SR53","Sujata Roy",7157490989,"Guwahati");
+
+>insert into user(user_id,Name,Phone,Address)values("MS43","Moumita Sharma",9197690789,"Kolkata");
+
+>select * from user; 
+
+>----+----------------+------------+-----------+
+| user_id | Name           | Phone      | Address   |
++---------+----------------+------------+-----------+
+| AM23    | Aman Alam      | 9153400980 | Rajasthan |
+| MS43    | Moumita Sharma | 9197690789 | Kolkata   |
+| RA23    | Rahul Sarkar   | 8133810323 | Guwahati  |
+| RAj13   | Raj Dev        | 8153410923 | Gurgaon   |
+| SR53    | Sujata Roy     | 7157490989 | Guwahati  |
++---------+----------------+------------+-----------+
+
+>create table foss(user_id varchar(80) primary key,Joining_date date);
+
+> insert into foss(user_id,Joining_date)values("MS43",'18-03-04');
+
+> insert into foss(user_id,joining_date)values("RAj13",'18-03-01');
+
+>insert into foss(user_id,joining_date)values("RA23",'18-03-02');
+
+>insert into foss(user_id,joining_date)values("AM23",'18-03-02');
+
+>insert into foss(user_id,joining_date)values("SR53",'18-03-05');
+
+> select * from foss;
+
+>+---------+--------------+
+| user_id | Joining_date |
++---------+--------------+
+| AM23    | 2018-03-02   |
+| MS43    | 2018-03-04   |
+| RA23    | 2018-03-02   |
+| RAj13   | 2018-03-01   |
+| SR53    | 2018-03-05   |
++---------+--------------+
+
+>create table tutorial_detail(user_id varchar(80) primary key,Course varchar(80),Expected_date date,Submission_date date);
+
+>insert into tutorial_detail(user_id,Course,Expected_date,Submission_date)values("RA23","R language",'18-03-26','18-03-26');
+
+> insert into tutorial_detail(user_id,Course,Expected_date,Submission_date)values("RAj13","Python",'18-03-24','18-03-23');
+
+>insert into tutorial_detail(user_id,Course,Expected_date,Submission_date)values("AM23","C++",'18-03-25','18-03-25');
+
+> insert into tutorial_detail(user_id,Course,Expected_date,Submission_date)values("SR53","Java",'18-03-22','18-03-21');
+
+>insert into tutorial_detail(user_id,Course,Expected_date,Submission_date)values("MS43","Python",'18-03-26','18-03-26');
+
+> select * from tutorial_detail;                                           +---------+------------+---------------+-----------------+
+| user_id | Course     | Expected_date | Submission_date |
++---------+------------+---------------+-----------------+
+| AM23    | C++        | 2018-03-25    | 2018-03-25      |
+| MS43    | Python     | 2018-03-26    | 2018-03-26      |
+| RA23    | R language | 2018-03-26    | 2018-03-26      |
+| RAj13   | Python     | 2018-03-24    | 2018-03-23      |
+| SR53    | Java       | 2018-03-22    | 2018-03-21      |
++---------+------------+---------------+-----------------+
+
+> create table payment(user_id varchar(80) primary key,Pay bigint);
+
+>insert into payment(user_id,Pay)values("RA23",8000);
+
+>insert into payment(user_id,Pay)values("RAj13",7000);
+
+>insert into payment(user_id,Pay)values("AM23",5000);
+
+>insert into payment(user_id,Pay)values("SR53",4000);
+
+>insert into payment(user_id,Pay)values("MS43",5000);
+
+>select * from payment;
++---------+------+
+| user_id | Pay  |
++---------+------+
+| AM23    | 5000 |
+| MS43    | 5000 |
+| RA23    | 8000 |
+| RAj13   | 7000 |
+| SR53    | 4000 |
++---------+------+
+
+>show tables;
++-----------------+
+| Tables_in_FOSEE |
++-----------------+
+| foss            |
+| payment         |
+| tutorial_detail |
+| user            |
++-----------------+
+
+>This is the first SQL query. 
+
+ select * from tutorial_detail;
++---------+------------+---------------+-----------------+
+| user_id | Course     | Expected_date | Submission_date |
++---------+------------+---------------+-----------------+
+| AM23    | C++        | 2018-03-25    | 2018-03-25      |
+| MS43    | Python     | 2018-03-26    | 2018-03-26      |
+| RA23    | R language | 2018-03-26    | 2018-03-26      |
+| RAj13   | Python     | 2018-03-24    | 2018-03-23      |
+| SR53    | Java       | 2018-03-22    | 2018-03-21      |
++---------+------------+---------------+-----------------+
+
+
+>This is the second SQL query.
+
+select count(*) from tutorial_detail;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+
+>This is the third SQl query.
+
+ select user_id,pay*1000 as pay from payment;
++---------+---------+
+| user_id | pay     |
++---------+---------+
+| AM23    | 5000000 |
+| MS43    | 5000000 |
+| RA23    | 8000000 |
+| RAj13   | 7000000 |
+| SR53    | 4000000 |
++---------+---------+
+
+
+
+
+
+
+
+
